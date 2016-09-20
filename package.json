@@ -1,6 +1,6 @@
 {
   "name": "react-composable-title",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Composable interface to document.title",
   "main": "dist/index.js",
   "scripts": {
