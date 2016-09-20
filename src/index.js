@@ -7,7 +7,7 @@ export default class Title extends React.Component {
         title: PropTypes.oneOfType([
             PropTypes.func,
             PropTypes.string,
-        ])
+        ]),
     };
     static contextTypes = {
         setDocumentTitle: PropTypes.func,
