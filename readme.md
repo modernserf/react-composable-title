@@ -1,33 +1,32 @@
 # react-composable-title
-
-**EXPERIMENTAL, UNTESTED CODE** but hey, I'm not your dad, use it if you want
-
 ---
 
-This is a reinterpretation of [react-document-title](https://github.com/gaearon/react-document-title) with some added notions of "composability," inspired by [React Router v4](https://react-router.now.sh/).
+This is a reinterpretation of [react-document-title](https://github.com/gaearon/react-document-title) with some added notions of "composability," inspired by [React Router v4](https://react-router.now.sh/), and uses Redux under the hood.
 
 ## Installation
 
-don't
+`npm install react-composable-title react redux react-redux`
 
 ## Example
 
 ```js
 import React from "react"
 import { Match } from "react-router"
-import Title from "react-composable-title"
+import { Title, TitleProvider } from "react-composable-title"
 
-function Parent () {
+function App () {
     return (
-        <Title title={(child) =>
-            child ? `${child} | My Cool App` : "My Cool App"
-        }/>
-            <div>
-                <Match exactly pattern="/" component={Home} />
-                <Match pattern="/foo" component={Foo} />
-                <Match pattern="/bar/:id" component={Bar} />
-            </div>
-        </Title>
+        <TitleProvider>
+            <Title title={(child) =>
+                child ? `${child} | My Cool App` : "My Cool App"
+            }/>
+                <div>
+                    <Match exactly pattern="/" component={Home} />
+                    <Match pattern="/foo" component={Foo} />
+                    <Match pattern="/bar/:id" component={Bar} />
+                </div>
+            </Title>
+        </TitleProvider>
     )
 }
 
@@ -54,9 +53,3 @@ function Bar ({ params }) {
 - `/` : "My Cool App"
 - `/foo` : "Foo | My Cool App"
 - `/bar/20` : "Bar 20 | My Cool App"
-
-## TODOs
-
-- tests
-- handle multiple children
-- handle cases where parent is updated and child is not
