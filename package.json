@@ -1,6 +1,6 @@
 {
   "name": "react-composable-title",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Composable interface to document.title",
   "main": "dist/index.js",
   "scripts": {
@@ -40,8 +40,13 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": ["plugin:react/recommended", "standard"],
-    "plugins": ["react"],
+    "extends": [
+      "plugin:react/recommended",
+      "standard"
+    ],
+    "plugins": [
+      "react"
+    ],
     "rules": {
       "quotes": [
         2,
